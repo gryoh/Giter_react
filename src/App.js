@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchArea from "./components/SearchArea";
+import ResultArea from "./components/ResultArea";
+import {useState} from "react";
 
 function App() {
+  const [doSearch, setDoSearch] = useState({});
+  function searchGitInfo(txt){
+    setDoSearch({
+      doSearch : true,
+      searchTxt : txt,
+    });
+    //setDoSearch(false);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SearchArea props={searchGitInfo}></SearchArea>
+
+        <ResultArea props={doSearch}></ResultArea>
       </header>
     </div>
   );
