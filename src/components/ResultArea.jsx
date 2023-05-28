@@ -26,7 +26,7 @@ export default function SearchArea({ props }) {
     console.log("props", props);
     //setSearchTxt(props.searchTxt);
 
-    if(props.doSearch){
+    useEffect(() => {
         let getUserInfo = async () => {
             const res = await fetch(
                 `https://api.github.com/users/${searchTxt}`
@@ -38,11 +38,7 @@ export default function SearchArea({ props }) {
         };
 
         getUserInfo();
-    }
-
-    // useEffect(() => {
-    //
-    // },[]);
+    },[]);
 
     //console.log("gitInfoList", gitInfoList);
 
