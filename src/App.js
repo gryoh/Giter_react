@@ -18,7 +18,7 @@ function App() {
       <header className="App-header">
         <SearchArea props={searchGitInfo}></SearchArea>
 
-        <ResultArea props={doSearch}></ResultArea>
+        <ResultArea params={doSearch}></ResultArea>
       </header>
     </div>
   );
